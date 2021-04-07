@@ -12,7 +12,7 @@ def step_impl(context):
     pass
 
 
-# Ejemplo de mock de servicio externo
+# Ejemplo de mock de api call
 @when('me inscribo indicando mi id de estudiante "{}" y el codigo de la materia "{}"')
 def step_impl(context, student_id, subject_code):
     """
