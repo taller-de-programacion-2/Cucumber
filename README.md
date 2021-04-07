@@ -1,6 +1,6 @@
 ## Ejemplos de uso cucumber 
 
-En la rama de cada respectivo lenguaje se encuentra un ejemplo de como usar la herramienta cucumber en cada uno. Se mencionan las libs mas relevantes que se utiliza y como ejecutar los tests.
+En la rama de cada respectivo lenguaje se encuentra un ejemplo de como usar la herramienta cucumber en cada uno. Se mencionan las libs mas relevantes que se utilizan y como ejecutar los tests.
 
 Hay ejemplos de:
 
