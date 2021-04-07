@@ -17,3 +17,10 @@ Esta lib nos permite mockear request.
 
 ## supertest
 Esta lib nos permite poder usar la api desde los test sin tener que levantarla
+
+## Ejemplos
+
+* [Setup Cucumber](https://github.com/matfonseca/Cucumber/blob/JavaScript/features/support/hooks.js)
+* [Api call (sin levantar el servicio)](https://github.com/matfonseca/Cucumber/blob/JavaScript/features/steps/ping.js#L7)
+* [Mock request http](https://github.com/matfonseca/Cucumber/blob/JavaScript/features/steps/inscription.js#L12)
+* [Reutilizacion de parte del step](https://github.com/matfonseca/Cucumber/blob/JavaScript/features/inscription.feature#L13)
