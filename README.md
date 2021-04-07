@@ -29,7 +29,7 @@ Then [Expected output]
 - **When:** Especifica el conjunto de acciones que lanzan el test. La interacción del usuario que acciona la funcionalidad que deseamos testear.
 - **Then:** Especifica el resultado esperado en el test. Observamos los cambios en el sistema y vemos si son los deseados.
 
-Ejemplo de Gherkins:
+Ejemplo de Gherkin:
 ```
 Feature: Buscar Fiuba en google
  
