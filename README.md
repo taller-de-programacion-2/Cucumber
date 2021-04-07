@@ -17,6 +17,11 @@ Cucumber es una herramienta para realizar "Feature Test", permite escribir tests
 
 Los test en cucumber estan escritores en Gherkin, algunas de las palabras claves que hay que conocer son la siguientes:
 
+- **Feature:** Indica el nombre de la funcionalidad que vamos a probar. Debe ser un título claro y explícito.
+- **Given:** Provee contexto para el escenario en que se va a ejecutar el test, tales como punto donde se ejecuta el test, o pre-requisitos en los datos. Incluye los pasos necesarios para poner al sistema en el estado que se desea probar.
+- **When:** Especifica el conjunto de acciones que lanzan el test. La interacción del usuario que acciona la funcionalidad que deseamos testear.
+- **Then:** Especifica el resultado esperado en el test. Observamos los cambios en el sistema y vemos si son los deseados.
+
 Sintaxis: 
 ```
 Feature: Title of the Scenario
@@ -24,10 +29,6 @@ Given [Preconditions or Initial Context]
 When [Event or Trigger]
 Then [Expected output]
 ```
-- **Feature:** Indica el nombre de la funcionalidad que vamos a probar. Debe ser un título claro y explícito.
-- **Given:** Provee contexto para el escenario en que se va a ejecutar el test, tales como punto donde se ejecuta el test, o pre-requisitos en los datos. Incluye los pasos necesarios para poner al sistema en el estado que se desea probar.
-- **When:** Especifica el conjunto de acciones que lanzan el test. La interacción del usuario que acciona la funcionalidad que deseamos testear.
-- **Then:** Especifica el resultado esperado en el test. Observamos los cambios en el sistema y vemos si son los deseados.
 
 Ejemplo de Gherkin:
 ```
