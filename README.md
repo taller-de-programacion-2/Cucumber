@@ -7,7 +7,7 @@ Hay ejemplos de:
 - Setup de hooks de cucumber(rollbacks, env vars, etc)
 - Api calls desde los steps (sin necesidad de levantar la api)
 - Mock de request http desde los steps
-- Re-utilizacion de parte de steps
+- Reutilizacion de parte de steps
 
 ## Motivacion
 
