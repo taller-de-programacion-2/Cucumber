@@ -1,7 +1,7 @@
 # Ejemplo de uso de Cucumber con Flask
 
 ## Requisitos
-Para poder utilizarlo es necasario tener instalado:
+Para poder utilizarlo es necesario tener instalado:
 - Docker
 
 ## Ejecutar 
