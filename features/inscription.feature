@@ -10,6 +10,7 @@ Feature: Inscripciones CRUD
     When pido las inscripciones
     Then no me devuelve ninguna inscripcion
 
+  #ejemplo de reutilizacion de la linea de when
   Scenario: Pedir todas las inscripciones con inscriptos
     Given hay 3 alumnos inscriptos en ninguna materia
     When pido las inscripciones
