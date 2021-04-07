@@ -5,7 +5,7 @@ En la rama de cada respectivo lenguaje se encuentra un ejemplo de como usar la h
 Hay ejemplos de:
 
 - Setup de hooks de cucumber(rollbacks, env vars, etc)
-- Api calls desde los steps (sin necesidad de levantar las apis)
+- Api calls desde los steps (sin necesidad de levantar la api)
 - Mock de request http desde los steps
 - Re-utilizacion de parte de steps
 
