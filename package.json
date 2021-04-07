@@ -1,0 +1,28 @@
+{
+  "name": "app_node",
+  "version": "1.0.0",
+  "description": "Node.js on Docker",
+  "author": "Matias Fonseca <fonseca.196@gmail.com>",
+  "main": "server.js",
+  "scripts": {
+    "cucumber": "./node_modules/.bin/cucumber-js ./features -r ./features/steps -r ./features/support -f ./node_modules/cucumber-pretty",
+    "start": "nodemon server.js",
+    "test": "jest --runInBand --detectOpenHandles",
+    "test-cov": "jest --runInBand --detectOpenHandles --collectCoverage"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cucumber-pretty": "^6.0.0",
+    "esm": "^3.2.25",
+    "express": "^4.16.1",
+    "node-fetch": "^2.6.1",
+    "nodemon": "^2.0.4",
+    "pg": "^8.4.1",
+    "pg-hstore": "^2.3.3",
+    "fetch-mock": "^9.11.0"
+  },
+  "devDependencies": {
+    "cucumber": "^6.0.5",
+    "supertest": "^5.0.0"
+  }
+}

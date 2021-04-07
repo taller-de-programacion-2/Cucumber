@@ -1,16 +1,19 @@
-## Ejemplos de uso cucumber 
+# Ejemplo de uso de Cucumber con Express
 
-En la rama de cada respectivo lenguaje se encuentra un ejemplo de como usar la herramienta cucumber en cada uno de ellos. Se mencionan las libs mas relevantes que se utiliza y como ejecutar los tests.
+## Liberias Relevantes Utilizadas
 
-Hay ejemplos de:
+### cucumber
+Behave es la implementacion de cucumber para js.
 
-- Setup de hooks de cucumber(rollbacks, env vars, etc)
-- Api calls desde los steps (sin necesidad de levantar las apis)
-- Mock de request http desde los steps
-- Re-utilizacion de parte de steps
+### fetch-mock
+Esta lib nos permite mockear request.
 
+## supertest
+Esta lib nos permite poder usar la api desde los test sin tener que levantarla
 
-## Motivacion
+## Requisitos
+Para poder utilizarlo es necasario tener instalado:
+- Docker
 
-Cucumber es una herramienta para realizar "Feature Test", permite escribir tests en lenguaje natural que son automizables por esta razon es muy util dado que cualquiera puede leer estos tests sin tener conocimiento tecnico. En su buen uso permite la reutilizacion de codigo dado que los tests en lenguaje natural son parametrizables. Esta pensada para usarse con BDD. [(+)](https://cucumber.io/)
-
+## Ejecutar 
+Para correr los test ejecutar el comando ```make test```.
