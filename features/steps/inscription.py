@@ -20,26 +20,36 @@ def step_impl(context, student_id, subject_code):
     :param student_id: String
     :type context: behave.runner.Context
     """
-    body = {
-        "student_id": student_id,
-        "subject_code": subject_code
+    json_headers = {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
     }
-
-    mimetype = 'application/json'
-    headers = {
-        'Content-Type': mimetype,
-        'Accept': mimetype
-    }
-    url = "/inscriptions"
-
+    
+    # dentro de este bloque "with", todas las llamadas a la librería "requests"
+    # pueden ser interceptadas por medio de lalibrería requests_mock
     with requests_mock.Mocker() as m:
-        service = FiubaService()
-
-        mock_url = service.getStudentEnpointURL(student_id)
-        mock_body = {'message': 'valid student'}
-        m.get(mock_url, json=mock_body, headers=headers, status_code=200)
-
-        context.response = context.client.post(url, headers=headers, data=json.dumps(body))
+        m.get(
+            "http://www.fi.uba.ar/api/students/"+student_id,
+            json={'message': 'valid student'}, 
+            headers=json_headers, 
+            status_code=200
+        )
+        # La invocación a '/inscriptions' debería hacer un request a www.fi.uba.ar
+        # por medio de la librería "requests". El mock creado en la línea 29 
+        # intercepta el request que sería generado por esa librería.
+        #
+        # La llamada es realizada por medio del test_client de flask (asignado a context.client), 
+        # lo cual permite testear una aplicación flask sin levantar el servidor.
+        #
+        # El response se asigna a context.response, lo cual permite realizar asserts sobre el mismo.
+        context.response = context.client.post(
+            "/inscriptions", 
+            headers = json_headers, 
+            data = json.dumps({
+                "student_id": student_id,
+                "subject_code": subject_code
+            })
+        )
 
 
 @then("me indica que mi inscripcion fue exitosa")
