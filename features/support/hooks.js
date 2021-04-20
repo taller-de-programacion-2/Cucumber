@@ -1,5 +1,5 @@
 const { After, AfterAll, BeforeAll} = require('cucumber');
-const app = require('../../server');
+const app = require('../../src/server');
 const supertest = require('supertest');
 
 //Rollback hooks, tambien se pueden setear variables de entorno y obtener informacion sobre el escenario

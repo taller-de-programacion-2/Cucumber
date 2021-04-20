@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "Node.js on Docker",
   "author": "Matias Fonseca <fonseca.196@gmail.com>",
-  "main": "server.js",
+  "main": "src/server.js",
   "scripts": {
     "cucumber": "./node_modules/.bin/cucumber-js ./features -r ./features/steps -r ./features/support -f ./node_modules/cucumber-pretty",
-    "start": "nodemon server.js",
+    "start": "nodemon src/server.js",
     "test": "jest --runInBand --detectOpenHandles",
     "test-cov": "jest --runInBand --detectOpenHandles --collectCoverage"
   },

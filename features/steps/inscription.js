@@ -1,9 +1,9 @@
 const {Given, When, Then, And} = require("cucumber");
 const assert = require('assert');
-const app = require('../../server');
+const app = require('../../src/server');
 const supertest = require('supertest');
 const fetchMock = require('fetch-mock');
-const FiubaService = require('../../Services/fiuba');
+const FiubaService = require('../../src/Services/fiuba');
 
 
 Given('que me quiero anotar a la materia Algoritmos y Programacion I', function () {});

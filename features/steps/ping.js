@@ -1,6 +1,6 @@
 const {  When, Then } = require('cucumber');
 const assert = require('assert');
-const app = require('../../server');
+const app = require('../../src/server');
 const supertest = require('supertest');
 
 When('i enter /ping', async function () {
