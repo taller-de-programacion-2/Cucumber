@@ -24,7 +24,9 @@ Los test en cucumber estan escritores en Gherkin, algunas de las palabras claves
 
 Sintaxis: 
 ```
-Feature: Title of the Scenario
+Feature: [high-level description of a software feature, and to group related scenarios]
+
+Scenario:[concrete example that illustrates a business rule]
 Given [Preconditions or Initial Context]
 When [Event or Trigger]
 Then [Expected output]
@@ -32,12 +34,23 @@ Then [Expected output]
 
 Ejemplo de Gherkin:
 ```
-Feature: Buscar Fiuba en google
- 
-  Scenario: Search for Fiuba
-    Given I have visited Google
-    When I search for "Fiuba"
-    Then I see "FIUBA | Facultad de Ingenieria - UBA"
+Feature: Google Homepage Search
+
+ Scenario: User sees the header
+   Given I’m on the homepage
+   Then I see the header
+
+ Scenario: User can search with “Google Search”
+   Given I’m on the homepage
+   When I type “random page” into the search field
+   And I click the Google Search button
+   Then I go to the random page search results
+
+ Scenario: User can search with “I’m Feeling Lucky”
+   Given I’m on the homepage
+   When I type “random page” into the search field
+   And I click the I’m Feeling Lucky button
+   Then I go to a random page
 ```
 
 ### Lenguajes
