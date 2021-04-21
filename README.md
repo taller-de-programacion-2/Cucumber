@@ -26,10 +26,10 @@ Sintaxis:
 ```
 Feature: [high-level description of a software feature, and to group related scenarios]
 
-Scenario:[concrete example that illustrates a business rule]
-Given [Preconditions or Initial Context]
-When [Event or Trigger]
-Then [Expected output]
+ Scenario:[concrete example that illustrates a business rule]
+  Given [Preconditions or Initial Context]
+  When [Event or Trigger]
+  Then [Expected output]
 ```
 
 Ejemplo de Gherkin:
