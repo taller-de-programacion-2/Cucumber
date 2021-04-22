@@ -55,7 +55,7 @@ Feature: Google Homepage Search
 
 ### Lenguajes
 
-* [Python](https://github.com/matfonseca/Cucumber/tree/Python)
-* [JavaScript](https://github.com/matfonseca/Cucumber/tree/JavaScript)
+* [Python](https://github.com/taller-de-programacion-2/Cucumber/Cucumber/tree/Python)
+* [JavaScript](https://github.com/taller-de-programacion-2/Cucumber/tree/JavaScript)
 
 
