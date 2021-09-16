@@ -9,8 +9,8 @@ Para correr los test ejecutar el comando ```make test```.
 
 ## Liberias Relevantes Utilizadas
 
-### cucumber
-Behave es la implementacion de cucumber para js.
+### [@cucumber/cucumber](https://github.com/cucumber/cucumber-js)
+Cucumber.js es la implementacion de cucumber para js.
 
 ### fetch-mock
 Esta lib nos permite mockear request.
