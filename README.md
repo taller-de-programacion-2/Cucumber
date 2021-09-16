@@ -20,7 +20,7 @@ Nos permite generar un reporte de coverage de los test ejecutados.
 
 ## Ejemplos
 
-* [Setup Cucumber](https://github.com/matfonseca/Cucumber/blob/Python/features/environment.py)
-* [Api call (sin levantar el servicio)](https://github.com/matfonseca/Cucumber/blob/Python/features/steps/ping.py#L17)
-* [Mock request http](https://github.com/matfonseca/Cucumber/blob/Python/features/steps/inscription.py#L15)
-* [Reutilizacion de parte del step](https://github.com/matfonseca/Cucumber/blob/Python/features/inscription.feature#L13)
+* [Setup Cucumber](https://github.com/taller-de-programacion-2/Cucumber/blob/Python/features/environment.py)
+* [Api call (sin levantar el servicio)](https://github.com/taller-de-programacion-2/Cucumber/blob/Python/features/steps/ping.py#L17)
+* [Mock request http](https://github.com/taller-de-programacion-2/Cucumber/blob/Python/features/steps/inscription.py#L15)
+* [Reutilizacion de parte del step](https://github.com/taller-de-programacion-2/Cucumber/blob/Python/features/inscription.feature#L13)
