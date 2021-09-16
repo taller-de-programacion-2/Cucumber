@@ -4,8 +4,6 @@ const fetch = require("node-fetch");
 
 
 class FiubaService{
-    static URL = config.FIUBA_URL;
-    static STUDENT_ENDPOINT = "students/";
 
     static async validateStudentId(student_id){
         let url_endpoint = this.getStudentEndpointURL(student_id);
@@ -14,7 +12,7 @@ class FiubaService{
     }
 
     static getStudentEndpointURL(student_id){
-        return this.URL + this.STUDENT_ENDPOINT + student_id
+        return config.FIUBA_URL + "students/" + student_id
     }
 }
 

@@ -1,7 +1,6 @@
 'use strict';
 
 const express = require('express');
-const config = require('./Configuration/config');
 const bodyParser = require('body-parser');
 const inscription_routes = require('./Routes/inscription');
 
@@ -25,15 +24,11 @@ app.use((req, res, next) => {
 });
 
 
-app.use('', inscription_routes); 
-    
+app.use('', inscription_routes);
 
 
-async function init() {
-	app.listen(config.PORT, config.HOST);
-  console.log(`Running on http://${config.HOST}:${config.PORT}`);
-}
 
-init();
+
+
 
 module.exports = app;

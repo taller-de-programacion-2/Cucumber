@@ -5,24 +5,24 @@
   "author": "Matias Fonseca <fonseca.196@gmail.com>",
   "main": "src/server.js",
   "scripts": {
-    "cucumber": "./node_modules/.bin/cucumber-js ./features -r ./features/steps -r ./features/support -f ./node_modules/cucumber-pretty",
-    "start": "nodemon src/server.js",
+    "cucumber": "./node_modules/.bin/cucumber-js -f @cucumber/pretty-formatter",
+    "start": "nodemon src/index.js",
     "test": "jest --runInBand --detectOpenHandles",
     "test-cov": "jest --runInBand --detectOpenHandles --collectCoverage"
   },
   "dependencies": {
+    "@cucumber/pretty-formatter": "^1.0.0-alpha.1",
     "body-parser": "^1.19.0",
-    "cucumber-pretty": "^6.0.0",
     "esm": "^3.2.25",
     "express": "^4.16.1",
+    "fetch-mock": "^9.11.0",
     "node-fetch": "^2.6.1",
     "nodemon": "^2.0.4",
     "pg": "^8.4.1",
-    "pg-hstore": "^2.3.3",
-    "fetch-mock": "^9.11.0"
+    "pg-hstore": "^2.3.3"
   },
   "devDependencies": {
-    "cucumber": "^6.0.5",
+    "@cucumber/cucumber": "^7.3.1",
     "supertest": "^5.0.0"
   }
 }

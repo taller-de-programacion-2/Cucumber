@@ -1,6 +1,10 @@
-const { After, AfterAll, BeforeAll} = require('cucumber');
+const { After, AfterAll, BeforeAll, AfterStep} = require('@cucumber/cucumber');
 const app = require('../../src/server');
 const supertest = require('supertest');
+var {setDefaultTimeout} = require('@cucumber/cucumber');
+
+setDefaultTimeout(60 * 1000);
+
 
 //Rollback hooks, tambien se pueden setear variables de entorno y obtener informacion sobre el escenario
 BeforeAll(async function(){
