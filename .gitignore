@@ -1,0 +1,9 @@
+venv/
+.idea
+__pycache__/
+app/Controllers/__pycache__/
+app/Models/Requests/__pycache__/
+app/Models/Responses/__pycache__/
+app/Models/__pycache__/
+app/__pycache__/
+services/__pycache__/

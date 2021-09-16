@@ -24,4 +24,4 @@ def step_impl(context, message_content):
     :type context: behave.runner.Context
     """
     assert context.response.status_code == 200
-    assert context.response.json['message'] == message_content
+    assert context.response.json()['message'] == message_content

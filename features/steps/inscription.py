@@ -27,12 +27,11 @@ def step_impl(context, student_id, subject_code):
     
     # dentro de este bloque "with", todas las llamadas a la librería "requests"
     # pueden ser interceptadas por medio de lalibrería requests_mock
-    with requests_mock.Mocker() as m:
+    with requests_mock.Mocker(real_http=True) as m:
         m.get(
             "http://www.fi.uba.ar/api/students/"+student_id,
             json={'message': 'valid student'}, 
-            headers=json_headers, 
-            status_code=200
+            headers=json_headers
         )
         # La invocación a '/inscriptions' debería hacer un request a www.fi.uba.ar
         # por medio de la librería "requests". El mock creado en la línea 29 
@@ -44,11 +43,11 @@ def step_impl(context, student_id, subject_code):
         # El response se asigna a context.response, lo cual permite realizar asserts sobre el mismo.
         context.response = context.client.post(
             "/inscriptions", 
-            headers = json_headers, 
-            data = json.dumps({
+            headers=json_headers,
+            json={
                 "student_id": student_id,
                 "subject_code": subject_code
-            })
+            }
         )
 
 
@@ -82,7 +81,7 @@ def step_impl(context):
     :type context: behave.runner.Context
     """
     assert context.response.status_code == 200
-    assert len(context.response.json['inscriptions']) == 0
+    assert len(context.response.json()['inscriptions']) == 0
 
 
 @given('hay {:d} alumnos inscriptos en ninguna materia')
@@ -105,7 +104,7 @@ def step_impl(context, inscriptions_amount):
             "subject_code": "ALGO1"
         }
 
-        with requests_mock.Mocker() as m:
+        with requests_mock.Mocker(real_http=True) as m:
             service = FiubaService()
 
             mock_url = service.getStudentEnpointURL(str(i))
@@ -122,4 +121,4 @@ def step_impl(context, inscriptions_amount):
     :type context: behave.runner.Context
     """
     assert context.response.status_code == 200
-    assert len(context.response.json['inscriptions']) == inscriptions_amount
+    assert len(context.response.json()['inscriptions']) == inscriptions_amount

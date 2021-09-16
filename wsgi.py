@@ -1,7 +1,6 @@
+import uvicorn
+
 from app.app import app
-import os 
-# do some production specific things to the app
-if os.environ.get('DEBUG', False):
-    app.config['DEBUG'] = True
-else:
-    app.config['DEBUG'] = False
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000, log_level="info")

@@ -1,7 +1,8 @@
-flask
-gunicorn
 argparse
 behave
 requests
 requests_mock
 coverage
+fastapi
+uvicorn
+pydantic

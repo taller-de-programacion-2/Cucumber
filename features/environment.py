@@ -1,12 +1,13 @@
 from app.app import app
 from behave import fixture, use_fixture
 import os
+from fastapi.testclient import TestClient
+
 
 # Crea una variable para poder hacer llamadas a la API
 @fixture
 def app_client(context, *args, **kwargs):
-    app.testing = True
-    context.client = app.test_client()
+    context.client = TestClient(app)
     yield context.client
 
 

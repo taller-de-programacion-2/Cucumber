@@ -1,28 +1,30 @@
-from typing import List, Any
-
-from flask import Flask, jsonify
+from fastapi import FastAPI
 from app.Controllers.inscription import InscriptionController
+from app.Models.Requests.inscription import Inscription
+from app.Models.Responses.inscriptions import Inscriptions
+from app.Models.Responses.message import Message
 
-app = Flask(__name__)
+app = FastAPI()
 inscriptions_repository = []
 
-@app.route("/inscriptions", methods=["GET"])
+
+@app.get("/inscriptions", response_model=Inscriptions)
 def getInscriptions():
     return InscriptionController().get(inscriptions_repository)
 
-@app.route("/inscriptions", methods=["POST"])
-def postInscriptions():
-    return InscriptionController().post(inscriptions_repository)
 
-@app.route("/ping")
+@app.post("/inscriptions", status_code=201, response_model=Message)
+def postInscriptions(body: Inscription):
+    return InscriptionController().post(inscriptions_repository, body)
+
+
+@app.get("/ping", response_model=Message)
 def ping():
-    return jsonify({"message":"ok"}), 200
+    return {"message": "ok"}
 
-@app.route("/reset", methods=["POST"])
+
+@app.post("/reset", response_model=Message)
 def reset():
-    #Rollback de la app
+    # Rollback de la app
     inscriptions_repository.clear()
-    return jsonify({"message":"ok"}), 200
-
-if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=3000)
+    return {"message": "ok"}

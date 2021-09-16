@@ -1,16 +1,15 @@
 from app.Models.inscription import Inscription
-from flask import request, jsonify
+from fastapi import HTTPException
 from services.fiuba import FiubaService
 from app.Models.subject import Subject
 
 
 class InscriptionController():
 
-    def post(self, reposity):
+    def post(self, reposity, body):
 
-        body = request.get_json()
-        student_id = body['student_id']
-        subject_code = body['subject_code']
+        student_id = body.student_id
+        subject_code = body.subject_code
 
         fiuba_service = FiubaService()
 
@@ -19,11 +18,11 @@ class InscriptionController():
 
             reposity.append(inscription)
 
-            return jsonify({'message': 'inscription created'}), 201
+            return {'message': 'inscription created'}
 
-        return jsonify({'message': 'inscription error'}), 400
+        raise HTTPException(status_code=400, detail='inscription error')
 
 
     def get(self, repository):
         inscriptions = [inscription.toJson() for inscription in repository]
-        return jsonify({'inscriptions': inscriptions}), 200
+        return {'inscriptions': inscriptions}
